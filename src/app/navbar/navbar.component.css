@@ -1,0 +1,29 @@
+.navbar{
+  box-shadow: 0 .5rem 1rem #00000026!important;
+  background-color: white !important;
+  padding: 18px;
+}
+li a i {
+  background-color: #e7e1e1;
+  padding: 8px;
+  font-size: 18px;
+}
+.testt{
+  position: relative;
+}
+
+.testtt{
+  position: absolute;
+  top: -10px;
+  right:-5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+}
+@media only screen and (max-width: 1000px) {
+.testt {
+  width: 48px;  }
+
+}

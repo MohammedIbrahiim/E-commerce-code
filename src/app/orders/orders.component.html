@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="container mt-5 table-responsive-md">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sr-Number</th>
+        <th scope="col">Product-Name</th>
+        <th scope="col">Product-image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of aytest ,let index = index">
+
+        <th scope="row">{{index}}</th>
+        <td>{{product.title}}</td>
+        <td><img src={{product.img}} class="w-75" height="80px" alt=""></td>
+        <td>{{product.discrption}}</td>
+        <td>
+          <button class="btn btn-danger me-1" (click)="increment(product,product.id)">
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
+          {{product.quantity}}
+          <button class="btn btn-danger ms-1" (click)="decrement(product,product.id)">
+            <i class="fa-solid fa-circle-minus"></i>
+          </button>
+        </td>
+        <td> {{product.price}}</td>
+        <td> {{product.total}}</td>
+      </tr>
+      <tr>
+      <td colspan="9" class="mt-5">
+          TOTAL : {{grandTotal}}
+      </td>
+      </tr>
+    </tbody>
+  </table>
+  <a routerLink="/cheackout"  >
+    <button class="btn  btn-outline-success w-100">Cheackout</button>
+  </a>
+</div>

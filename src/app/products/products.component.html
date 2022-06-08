@@ -1,0 +1,136 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active text-black" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">All Product</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link text-black" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Sports-Clouths</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link text-black" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Sports-shoe</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link text-black" id="Flags-tab" data-bs-toggle="tab" data-bs-target="#Flags" type="button" role="tab" aria-controls="contact" aria-selected="false">Sports-Flags</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div id="serv" class="services bg-light text-center bord">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center align-items-center ">
+              <div class="const-title">
+                <h3 class="pt-xl-4 mt-5 fs-3"> All Products </h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let product of products index as i" class="col-xl-3 col-md-6 ">
+              <div class="card my-xl-5">
+                <div class="icon mt-sm-5 mt-xl-5  mb-xl-3">
+                  <img [src]="product.img" class="rounded-2" alt="">
+                </div>
+                <h3 class="s-title">{{product.title}}</h3>
+                <p class="subtitle-a px-xl-3 text-muted">{{product.discrption}} .</p>
+                <h3 class="s-title">{{product.price}} $</h3>
+                <a  routerLink="/products">
+                  <button id='btn{{product.id}}'class="bttn mb-3" (click)="addTocart(product,product.id)" (click)="isClicked1(product.id)">Add To Card</button>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div id="serv" class="services bg-light text-center bord">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center align-items-center ">
+              <div class="const-title">
+                <h3 class="fs-3 pt-xl-4 mt-5"> Sports-Clouths </h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let product of Sports_Clouths index as i" class="col-xl-3 col-md-6 ">
+              <div class="card my-xl-5">
+                <div class="icon mt-sm-5 mt-xl-5  mb-xl-3">
+                  <img [src]="product.img" class="rounded-2" alt="">
+                </div>
+                <h3 class="s-title">{{product.title}}</h3>
+                <p class="subtitle-a px-xl-3 text-muted">{{product.discrption}} .</p>
+                <h3 class="s-title">{{product.price}} $</h3>
+                <a  routerLink="/products">
+                  <button id='btn1{{product.id}}'class="bttn mb-3" (click)="addTocart(product,product.id)" (click)="isClicked1(product.id)">Add To Card</button>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <div id="serv" class="services bg-light text-center bord">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center align-items-center ">
+              <div class="const-title">
+                <h3 class="fs-3 pt-xl-4 mt-5"> Sports-shoe</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let product of Sports_shoe index as i" class="col-xl-3 col-md-6 ">
+              <div class="card my-xl-5">
+                <div class="icon mt-sm-5 mt-xl-5  mb-xl-3">
+                  <img [src]="product.img" class="rounded-2" alt="">
+                </div>
+                <h3 class="s-title">{{product.title}}</h3>
+                <p class="subtitle-a px-xl-3 text-muted">{{product.discrption}} .</p>
+                <h3 class="s-title ">{{product.price}} $</h3>
+                <a  routerLink="/products">
+                  <button id='btn1{{product.id}}'class="bttn mb-3" (click)="addTocart(product,product.id)" (click)="isClicked1(product.id)">Add To Card</button>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="Flags" role="tabpanel" aria-labelledby="Flags-tab">
+      <div id="serv" class="services bg-light text-center bord">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center align-items-center ">
+              <div class="const-title">
+                <h3 class="fs-3 pt-xl-4 mt-5"> Sports-Flags</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let product of Sports_Flags index as i" class="col-xl-3 col-md-6 ">
+              <div class="card my-xl-5">
+                <div class="icon mt-sm-5 mt-xl-5  mb-xl-3">
+                  <img [src]="product.img" class="rounded-2" alt="">
+                </div>
+                <h3 class="s-title ">{{product.title}}</h3>
+                <p class="subtitle-a px-xl-3 text-muted">{{product.discrption}} .</p>
+                <h3 class="s-title mt-sm-3">{{product.price}} $</h3>
+                <a  routerLink="/products">
+                  <button id='btn1{{product.id}}'class="bttn mb-3" (click)="addTocart(product,product.id)" (click)="isClicked1(product.id)">Add To Card</button>
+              </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

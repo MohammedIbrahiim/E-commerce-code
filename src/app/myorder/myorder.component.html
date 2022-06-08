@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container mt-5 table-responsive-md">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sr-Number</th>
+        <th scope="col">Product-Name</th>
+        <th scope="col">Product-image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products ,let index = index">
+        <th scope="row">{{index}}</th>
+        <td>{{product.title}}</td>
+        <td><img src={{product.img}} class="w-75" height="80px" alt=""></td>
+        <td>{{product.discrption}}</td>
+        <td> {{product.quantity}} </td>
+        <td> {{product.price}}</td>
+        <td> {{product.total}}</td>
+      </tr>
+      <tr>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,24 @@
+
+.form-container{
+  display: block;
+  max-width: 400px;
+  margin: auto;
+padding: 48px;
+background-color: rgba(231, 224, 224, 0.795);
+border-radius: 30px;
+}
+.form-container mat-form-field{
+  width: 100%;
+}
+.new{
+  background-color: #e64944;
+  margin-left: 38px;
+  color: white;
+}
+header{
+  height: 100vh;
+  background-image: url(../../assets/signheader.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}

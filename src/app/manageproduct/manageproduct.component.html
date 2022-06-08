@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+  <div class="container mt-5">
+    <form (ngSubmit)="submit_order(place_order)" [formGroup]="place_order" action="">
+      <label for="" class="pb-1">discrption</label>
+      <input type="text" class="form-control" formControlName="discrption"  placeholder="Ahly main shirt">
+      <div *ngIf="place_order.get('discrption')?.errors && place_order.get('discrption')?.touched "  class="alert alert-danger my-2">
+        <p *ngIf="place_order.get('discrption')?.errors?.['required']" class="mb-0">discrption is requierd</p>
+      </div>
+      <label for="" class="pb-1 pt-1">title</label>
+      <input type="text" class="form-control" formControlName="title"  placeholder="Sports Cloths">
+      <div *ngIf="place_order.get('title_one')?.errors && place_order.get('title_one')?.touched "  class="alert alert-danger my-2">
+        <p *ngIf="place_order.get('title_one')?.errors?.['required']" class="mb-0">title is requierd</p>
+      </div>
+      <label for="price" class="pb-1 pt-1">Price</label>
+      <input type="number" class="form-control mt-2" formControlName="Price" placeholder="Product Price  20">
+      <div *ngIf="place_order.get('Price')?.errors && place_order.get('Price')?.touched "  class="alert alert-danger my-2">
+        <p *ngIf="place_order.get('Price')?.errors?.['required']" class="mb-0">Price is requierd</p>
+      </div>
+        <input type="file"  class="form-control mt-4" name="image"  required #image>
+
+      <button  [disabled]="place_order.invalid" (click)="  addtofirebase()" class="btn btn btn-outline-success mt-3">Add Product</button>
+      </form>
+
+  </div>
+
+  <div class="container mt-5 table-responsive-md">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Sr-Number</th>
+          <th scope="col">Product-Name</th>
+          <th scope="col">Product-image</th>
+          <th scope="col">Description</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products ,let index = index">
+
+          <th scope="row">{{index}}</th>
+          <td>{{product.title}}</td>
+          <td><img src={{product.img}} class="w-75" height="80px" alt=""></td>
+          <td>{{product.discrption}}</td>
+          <td>
+            {{product.quantity}}
+          </td>
+          <td> {{product.price}}</td>
+        </tr>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>

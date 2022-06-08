@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-coomerce-3801f": {
+      "hosting": {
+        "e-commerce": [
+          "e-coomerce-3801f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-coomerce-3801f"
+  }
+}
